@@ -1,0 +1,14 @@
+{
+    "name": "loadingBar",
+    "version": "1.0.0",
+    "description": "A fake loading bar without server.",
+    "author": "popomore <sakura9515@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/popomore/loadingBar.git"
+    },
+    "bugs": {
+        "url": "https://github.com/popomore/loadingBar/issues"
+    },
+    "license": "MIT"
+}

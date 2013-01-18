@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>loadingBar</title>
+  <link rel="stylesheet" href="./loading.css" type="text/css" media="screen" charset="utf-8">
+</head>
+<body>
+  <div class="example">
+    <div class="loading-bar">
+      <div id="loading" class="loading"></div>
+    </div>
+  </div>
+  <div class="example">
+    <div class="clock">
+      <div class="clock-left">
+        <div id="clock-left" class="clock-left-pie"></div>
+      </div>
+      <div class="clock-right">
+        <div id="clock-right" class="clock-right-pie"></div>
+      </div>
+      <div class="clock-bg"></div>
+    </div>
+  </div>
+  <script type="text/javascript" charset="utf-8" src="../loadingBar.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    var config = [[20, 100], [80, 200], [100, 500]];
+    loadingBar(config, function(percent){
+      document.getElementById('loading').style.width = percent + '%';
+
+      var dom = (percent > 50) ? 'clock-right' : 'clock-left';
+      percent = (percent > 50) ? percent - 50 : percent;
+      var deg = (percent/50) * 180;
+      document.getElementById(dom).style.webkitTransform = 'rotate(' + deg + 'deg)';
+    }, function(){
+      alert('100%');
+    });
+  </script>
+</body>
+</html>
